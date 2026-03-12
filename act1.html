@@ -6,9 +6,9 @@
         <p id="result"></p>
         <script>
             var myobj = { name: "Sathya", age: 12, grade: 7 };
-            var myJSON = JSON.stringify(myobj); // Convert JS object to JSON for sending data 
+            var myJSON = JSON.stringify(myObj); // Convert JS object to JSON for sending data 
             var newObj = JSON.parse(myJSON); // Convert JSON string back to JS object while receiving data from the server
-            document.getElementById("result").innerHTML = + newObj.name;
+            document.getElementById("result").innerHTML = newObj.name;
         </script>
     </body>
 </html>
