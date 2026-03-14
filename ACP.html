@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JS promises</h2>
+    <p id="demo"></p>
+
+    <script>
+        function myDisplayer(some) {
+            document.getElementById("demo").innerHTML = some;
+        }
+        function mul(a, b) {
+            var product = a * b;
+            myDisplayer(product);
+        }
+        let myPromise = new Promise(function (myResolve, myReject) {
+            let x = 0; // Some code (try to change x to 5)
+            if (x == 0) {
+                myResolve("OK"); // when successful
+            } else {
+                myReject("Error"); // when error
+            }
+        });
+        // Consuming code - must wait for a fulfilled promise
+        myPromise.then(
+            function (value) { mul(5, 10); }, // when fulfilled
+            function (error) { myDisplayer(error); } // when rejected
+        );
+    </script>
+</body>
+
+</html>
